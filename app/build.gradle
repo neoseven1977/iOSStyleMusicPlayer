@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.musicplayer'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.musicplayer"
+        minSdk 24
+        targetSdk 34
+        versionCode 3
+        versionName "3.0"
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.5.3"
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:1.13.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.4"
+    implementation "androidx.activity:activity-compose:1.9.2"
+    implementation platform("androidx.compose:compose-bom:2024.05.00")
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.compose.material3:material3"
+
+    // ExoPlayer
+    implementation "androidx.media3:media3-exoplayer:1.3.1"
+    implementation "androidx.media3:media3-ui:1.3.1"
+
+    // Metadata retriever
+    implementation "androidx.media:media:1.7.0"
+
+    // Palette (для цвета по обложке)
+    implementation "androidx.palette:palette-ktx:1.0.0"
+}
